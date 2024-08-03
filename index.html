@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Enamorados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="content">
+        <!-- Página de bienvenida -->
+        <div id="welcome-page" class="page">
+            <div class="mensagebox">
+            <p>Hola, ¿cómo estás?</p>
+            <p>deceas continuar ?</p>
+            </div>
+            <button onclick="goToPage('gender-page')">Sí, llévame allá</button>
+        </div>
+
+        <!-- Página de género -->
+        <div id="gender-page" class="page hidden">
+            <p>Tienes que elegir un género</p>
+            <button class="male-btn" onclick="chooseGender('male')">Hombre</button>
+            <button class="female-btn" onclick="chooseGender('female')">Mujer</button>
+        </div>
+
+        <!-- Página de búsqueda de amor -->
+        <div id="love-search-page" class="page hidden">
+            <p>¿Estás buscando al amor de tu vida?</p>
+            <button id="love-yes" onclick="loveSearch('yes')">Sí</button>
+            <button id="love-no" onclick="loveSearch('no')">No</button>
+        </div>
+
+        <!-- Página de sí -->
+        <div id="yes-page" class="page hidden">
+            <p>¡Síii! ¿En serio? Si tú ya tienes al amor de tu vida junto a ti.</p>
+            <p>Si quieres buscar al amor de tu vida, ve a otra parte, aquí no.</p>
+            <button onclick="goToPage('welcome-page')">Fin</button>
+        </div>
+
+        <!-- Página de no -->
+        <div id="no-page" class="page hidden">
+            <p>¡Nooo!</p>
+            <p>Claro que sí, te entiendo. Tú ya tienes al amor de tu vida junto a ti y me imagino que lo amas demasiado.</p>
+            <button onclick="alreadyLove('yes')">Sí</button>
+            <button onclick="alreadyLove('no')">No</button>
+        </div>
+
+        <!-- Página de no (amor no querido) -->
+        <div id="no-love-page" class="page hidden">
+            <p>¡Nooo! ¿Ya no la quieres?</p>
+            <img src="imagenes/tristesa.jpg" alt="Imagen triste">
+            <button onclick="goToPage('welcome-page')">Fin</button>
+        </div>
+
+        <!-- Página de sí (amor verdadero) -->
+        <div id="true-love-page" class="page hidden">
+            <p>Yo sabía que de verdad este amor es verdadero y que van a durar mucho tiempo más.</p>
+            <p>¿Quieres ver quién es el amor de tu vida?</p>
+            <button onclick="showTrueLove()">Sí, llévame allá</button>
+        </div>
+
+        <!-- Página de mostrar amor -->
+        <div id="show-love-page" class="page hidden">
+            <p>¿Quién será?</p>
+            <button onclick="showPhotos()">➡</button>
+        </div>
+
+        <!-- Página de fotos de amor -->
+        <div id="photos-page" class="page hidden">
+            <p>Este es el amor de tu vida</p>
+            <div id="photos-container"></div>
+            <button onclick="goToPage('final-page')">Siguiente</button>
+        </div>
+
+        <!-- Página final -->
+        <div id="final-page" class="page hidden">
+            <p>Si has llegado hasta aquí es porque el amor de tu vida te ha de hacer muy feliz y sabes por qué, porque el amor se compone de comprensión, confianza, amor, apoyo sentimental emocional, y sobre todo fortaleza para no dejar que ese bello amor se acabe nunca.</p>
+            <p>Debes cuidar mucho a esa persona, amarla y respetarla.</p>
+            <img src="imagenes/enamorados.jpg" alt="Pequeña foto">
+            <button onclick="goToPage('welcome-page')">Fin</button>
+        </div>
+    </div>
+    <audio  id="background-music" src="cancion/TikVid.io_7086604446414753029.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
